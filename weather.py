@@ -13,8 +13,20 @@ root.geometry("900x500+300+200")
 root.resizable(False,False)
 root.config(cursor="heart")
 
+def getWeather():
+    city=textfield.get()
+
+    geolocator=Nominatim(user_agent="SweaterWeather")
+    location = geolocator.geocode(city)
+    if location is None:
+        print("CITY NOT FOUND")
+    obj = TimezoneFinder()
+    result = obj.timezone_at(lng = location.longitude , lat=location.latitude)
+    
+    
+
 #search box
-Search_image=PhotoImage(file="search_bar.png")
+Search_image=PhotoImage(file="searchBar.png")
 myimage=Label(image=Search_image)
 myimage.place(x=20,y=20)
 
@@ -23,7 +35,7 @@ textfield.place(x=40,y=50)
 textfield.focus()
 
 Search_icon = PhotoImage(file="search_icon.png")
-myimage_icon=Button(image=Search_icon,borderwidth=0,bg="#9b5e37")
+myimage_icon=Button(image=Search_icon,borderwidth=0,bg="#9b5e37",command=getWeather)
 myimage_icon.place(x=270,y=42)
 
 #logo
@@ -52,8 +64,19 @@ label4.place(x=600,y=350)
 
 t=Label(font=("arial",70,"bold"),fg="#ee666d")
 t.place(x=400,y=150)
+
 c=Label(font=("arial",15,"bold"))
 c.place(x=400,y=250)
 
+w=Label(text="...", font=("arial",20,"bold"),bg="#e0b15e")
+w.place(x=230,y=370)
 
+h=Label(text="...", font=("arial",20,"bold"),bg="#e0b15e")
+h.place(x=337,y=370)
+
+d=Label(text="...", font=("arial",20,"bold"),bg="#e0b15e")
+d.place(x=450,y=370)
+
+p=Label(text="...", font=("arial",20,"bold"),bg="#e0b15e")
+p.place(x=600,y=370)
 root.mainloop()
