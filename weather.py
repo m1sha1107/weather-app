@@ -62,7 +62,7 @@ Search_image = PhotoImage(file="searchBar.png")
 myimage = Label(image=Search_image)
 myimage.place(x=20, y=20)
 
-textfield = tk.Entry(root, justify="center", width=15, font=("poppins", 25, "bold"), bg="#9b5e37", border=0, fg="white")
+textfield = tk.Entry(root, justify="center", width=15, font=("Times New Roman", 25, "bold"), bg="#9b5e37", border=0, fg="white")
 textfield.place(x=40, y=50)
 textfield.focus()
 
@@ -76,45 +76,45 @@ logo = Label(image=Logo_image)
 logo.place(x=30, y=130)
 
 # Bottom Box
-Frame_image = PhotoImage(file="Box.png")
+Frame_image = PhotoImage(file="Bottom.png")
 frame_myimage = Label(image=Frame_image)
 frame_myimage.pack(padx=5, pady=5, side=BOTTOM)
 
 # Time
-name = Label(root, font=("arial", 20, "bold"))
+name = Label(root, font=("Times New Roman", 20, "bold"))
 name.place(x=500, y=20)
-clock = Label(root, font=("Helvetica", 15))
+clock = Label(root, font=("Times New Roman", 15))
 clock.place(x=600, y=100)
 
 # Labels
-label1 = Label(root, text="WIND", font=("Helvetica", 10, 'bold'), fg="white", bg="#e0b15e")
-label1.place(x=230, y=350)
+label1 = Label(root, text="WIND", font=("Times New Roman", 10, 'bold'), fg="white", bg="#ac663e")
+label1.place(x=200, y=400)
 
-label2 = Label(root, text="HUMIDITY", font=("Helvetica", 10, 'bold'), fg="white", bg="#e0b15e")
-label2.place(x=330, y=350)
+label2 = Label(root, text="HUMIDITY", font=("Times New Roman", 10, 'bold'), fg="white", bg="#ac663e")
+label2.place(x=330, y=400)
 
-label3 = Label(root, text="DESCRIPTION", font=("Helvetica", 10, 'bold'), fg="white", bg="#e0b15e")
-label3.place(x=450, y=350)
+label3 = Label(root, text="DESCRIPTION", font=("Times New Roman", 10, 'bold'), fg="white", bg="#ac663e")
+label3.place(x=500, y=400)
 
-label4 = Label(root, text="PRESSURE", font=("Helvetica", 10, 'bold'), fg="white", bg="#e0b15e")
-label4.place(x=600, y=350)
+label4 = Label(root, text="PRESSURE", font=("Times New Roman", 10, 'bold'), fg="white", bg="#ac663e")
+label4.place(x=700, y=400)
 
-t = Label(font=("arial", 70, "bold"), fg="#e0b15e")
+t = Label(font=("Times New Roman", 70, "bold"), fg="#e0b15e")
 t.place(x=400, y=150)
 
-c = Label(font=("arial", 15, "bold"))
+c = Label(font=("Times New Roman", 15, "bold"))
 c.place(x=400, y=250)
 
-w = Label(text="...", font=("arial", 15, "bold"), bg="#e0b15e")
-w.place(x=230, y=370)
+w = Label(text="...", font=("arial", 15, "bold"), bg="#ac663e")
+w.place(x=200, y=430)
 
-h = Label(text="...", font=("arial", 15, "bold"), bg="#e0b15e")
-h.place(x=337, y=370)
+h = Label(text="...", font=("arial", 15, "bold"), bg="#ac663e")
+h.place(x=330, y=430)
 
-d = Label(text="...", font=("arial",15, "bold"), bg="#e0b15e")
-d.place(x=450, y=370)
+d = Label(text="...", font=("arial",15, "bold"), bg="#ac663e")
+d.place(x=470, y=430)
 
-p = Label(text="...", font=("arial", 15, "bold"), bg="#e0b15e")
-p.place(x=570, y=370)
+p = Label(text="...", font=("arial", 15, "bold"), bg="#ac663e")
+p.place(x=700, y=430)
 
 root.mainloop()
