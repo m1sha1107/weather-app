@@ -30,7 +30,7 @@ pip install geopy timezonefinder requests pytz
 4. Run the script using:
 
 ```bash
-python app.py
+python weather.py
 ```
 
 ## Final Output:
