@@ -19,11 +19,24 @@ def getWeather():
     geolocator=Nominatim(user_agent="SweaterWeather")
     location = geolocator.geocode(city)
     if location is None:
-        print("CITY NOT FOUND")
+        raise("LOCATION NOT FOUND")
     obj = TimezoneFinder()
     result = obj.timezone_at(lng = location.longitude , lat=location.latitude)
     
+    home = pytz.timezone(result)
+    local_time=datetime.now(home)
+    current_time=local_time.strftime("TIME: %I: %M %p")
+    clock.config(text=current_time)
+    name.config(text="CURRENT WEATHER")
+
+    #weather
+    api = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lng}&appid=e19cdbea726ed4c7ac11a4df461f41f6"
+
+    json_data = requests.get(api).json()
+    condition = json_data['weather'][0]['main']
+    description = json_data['weather'][0]['description']
     
+
 
 #search box
 Search_image=PhotoImage(file="searchBar.png")
@@ -41,13 +54,19 @@ myimage_icon.place(x=270,y=42)
 #logo
 Logo_image=PhotoImage(file="logo.png")
 logo=Label(image=Logo_image)
-logo.place(x=35,y=150)
+logo.place(x=30,y=130)
 
 
 #Bottom Box
 Frame_image=PhotoImage(file="Box.png")
 frame_myimage=Label(image=Frame_image)
 frame_myimage.pack(padx=5,pady=5,side=BOTTOM)
+
+#time
+name = Label(root,font=("arial",20,"bold"))
+name.place(x=600,y=20)
+clock = Label(root,font=("Helvetica",15))
+clock.place(x=650,y=50)
 
 #label
 label1=Label(root,text="WIND", font=("Helvetica",10,'bold'),fg="white",bg="#e0b15e")
